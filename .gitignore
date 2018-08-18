@@ -1,0 +1,10 @@
+# env file
+.env
+
+# instructions
+Instructions/
+
+
+# local mods
+
+node_modules/
