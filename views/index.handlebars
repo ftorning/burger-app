@@ -1,1 +1,39 @@
-<h3>loaded</h3>
+
+<div class="row">
+    <div class="col-xs-6">
+        <div class="card">
+            <div class="card-header">
+                Available
+            </div>
+            <ul class="list-group list-group-flush">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <div class="burger-item" data-value={{ id }} data-devoured={{ devoured }}><li class="list-group-item">{{ burger_name }}</li></div>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="card">
+            <div class="card-header">
+                    Devoured
+            </div>
+            <ul class="list-group list-group-flush">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <div class="burger-item" data-value={{ id }} data-devoured={{ devoured }}><li class="list-group-item">{{ burger_name }}</li></div>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+<form method="post">
+    <div class="form-group">
+        <input type="text" class="form-control" name="burger" placeholder="Enter a burger your want to eat">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
